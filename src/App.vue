@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <app-input @addNote="addNote"></app-input>
+    <div class="notes">
+      <div class="note" v-for="note, ind in notes" :key="ind">{{ind + 1}}. {{note}}</div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AppInput from './components/AppInput.vue'
 export default {
-  name: 'App',
+  data () {
+    return {
+      notes: []
+    }
+  },
+  methods: {
+    addNote (text) {
+      this.notes.push(text)
+    }
+  },
   components: {
-    HelloWorld
+    AppInput
   }
 }
 </script>
