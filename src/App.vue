@@ -2,7 +2,11 @@
   <div class="container">
     <app-input @addNote="addNote"></app-input>
     <div class="notes">
-      <div class="note" v-for="note, ind in notes" :key="ind">{{ind + 1}}. {{note}}</div>
+      <div 
+      class="note"
+      v-for="note, ind in notes"
+      :key="ind"
+      >{{ind + 1}}. <br> {{note}}</div>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
-    <input type="text" id="inputValue" v-model='inputValue'>
-    <div class="error" v-if="!this.inputValue">Введите задачу</div>
-    <button @click="inputText">Добавить задачу</button>
+    <textarea class="textarea" type="text" id="inputValue" v-model='inputValue' placeholder="Введите заметку"></textarea>
+    <!-- <div class="error" v-if="!this.inputValue">Введите задачу</div> -->
+    <button class="btn" @click="inputText" :disabled="!this.inputValue">Добавить задачу</button>
 </template>
 
 <script>
