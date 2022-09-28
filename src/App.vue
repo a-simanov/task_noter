@@ -6,7 +6,10 @@
       class="note"
       v-for="note, ind in notes"
       :key="ind"
-      >{{ind + 1}}. <br> {{note}}</div>
+      >
+        <p>{{getDate}}</p>
+        <p>{{ind + 1}}. <br> {{note}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -22,6 +25,11 @@ export default {
   methods: {
     addNote (text) {
       this.notes.push(text)
+    }
+  },
+  computed: {
+    getDate () {
+      return new Date().toLocaleDateString()
     }
   },
   components: {
