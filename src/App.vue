@@ -9,6 +9,7 @@
       >
         <p>{{getDate}}</p>
         <p>{{ind + 1}}. <br> {{note}}</p>
+        <button @click="notes.splice(ind, 1)">Удалить</button>
       </div>
     </div>
   </div>
