@@ -7,9 +7,13 @@
       v-for="note, ind in notes"
       :key="ind"
       >
-        <p>{{getDate}}</p>
-        <p>{{ind + 1}}. <br> {{note}}</p>
-        <button @click="notes.splice(ind, 1)">Удалить</button>
+        <div class="text">
+          <p>{{getDate}}</p>
+          <p>{{note}}</p>
+        </div>        
+        <button class="btn btn_remove" @click="notes.splice(ind, 1)">
+          <img class="img img_remove" src="./assets/delete.png" alt="Удалить">
+        </button>
       </div>
     </div>
   </div>
